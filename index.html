@@ -95,7 +95,7 @@ h1{font-size:54px;margin:4px 0 12px}h2{font-size:42px;margin-bottom:6px}
 <svg class="cn a"><use href="#cn"/></svg><svg class="cn b"><use href="#cn"/></svg><svg class="cn c"><use href="#cn"/></svg><svg class="cn d"><use href="#cn"/></svg>
 <p class="ey">O plano</p><h2 class="gold">Como vai ser a noite</h2>
 <ol class="tl">
-<li><i class="n">I</i><div><b>A chegada</b><span>Nos encontramos na Casa Nonna às 19h30, com mesa para dois.</span></div></li>
+<li><i class="n">I</i><div><b>A saída</b><span>Passo na sua casa às 19h para te buscar, e seguimos juntos para a Casa Nonna.</span></div></li>
 <li><i class="n">II</i><div><b>O brinde</b><span>Para começar, um drink à escolha: La Bella Nonna, Margarita ou um bom vinho.</span></div></li>
 <li><i class="n">III</i><div><b>O jantar</b><span>Massas artesanais, risotos e pizzas de massa fina e crocante, sem pressa.</span></div></li>
 <li><i class="n">IV</i><div><b>O filme</b><span>A noite não termina com o fim do jantar: ela continua com um filminho na minha casa.</span></div></li>
@@ -110,7 +110,7 @@ h1{font-size:54px;margin:4px 0 12px}h2{font-size:42px;margin-bottom:6px}
 <div class="r"><span>Onde</span><b>Casa Nonna — Unidade Popular</b></div>
 <div class="r"><span>Endereço</span><b>R. Vinte e Quatro de Outubro, 788, Popular, Cuiabá – MT</b></div>
 <div class="r"><span>Data</span><b>Sexta-feira, 30 de outubro de 2026</b></div>
-<div class="r"><span>Horário</span><b>19h30</b></div>
+<div class="r"><span>Horário</span><b>19h, passo para te buscar</b><small>Jantar às 19h30</small></div>
 <div class="r"><span>Mesa</span><b>Para 2 pessoas</b></div>
 <div class="r"><span>Traje</span><b>Esporte fino</b><small>Elegante e confortável. Sugestão de paleta: vinho, creme e preto</small><div class="sw"><i style="background:#5C1A22"></i><i style="background:#F8EFE2"></i><i style="background:#111"></i></div></div>
 <div class="bt"><a href="https://www.google.com/maps/search/?api=1&query=Casa+Nonna+Rua+Vinte+e+Quatro+de+Outubro+788+Popular+Cuiaba" target="_blank" rel="noopener">Ver no mapa</a><a href="#" id="ics">Salvar na agenda</a></div></section>
@@ -128,7 +128,7 @@ h1{font-size:54px;margin:4px 0 12px}h2{font-size:42px;margin-bottom:6px}
 
 <script>
 const $=s=>document.querySelector(s),R=$('#rain'),slow=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const W='https://wa.me/5565992600555?text='+encodeURIComponent('Aceito o convite! 😊 Nos vemos dia 30/10, às 19h30, na Casa Nonna.');
+const W='https://wa.me/5565992600555?text='+encodeURIComponent('Aceito o convite! 😊 Te espero dia 30/10, às 19h.');
 function heart(big){const e=document.createElement('div'),z=(big?20:12)+Math.random()*(big?22:16);
 e.className='ht';e.style.cssText=`left:${Math.random()*100}vw;width:${z}px;color:${['#C9414F','#E0707F','#B9922F'][Math.random()*3|0]};--dx:${Math.random()*160-80}px;--r:${Math.random()*140-70}deg;animation-duration:${(big?3:6)+Math.random()*4}s;animation-delay:${big?Math.random()*.4:0}s`;
 e.innerHTML='<svg viewBox="0 0 24 24" style="fill:currentColor"><use href="#h"/></svg>';R.appendChild(e);e.onanimationend=()=>e.remove()}
@@ -137,10 +137,10 @@ setTimeout(()=>{$('#intro').classList.add('gone');document.body.className='on';f
 $('#env').onclick=openEnv;
 const io=new IntersectionObserver(a=>a.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
-const T=new Date('2026-10-30T19:30:00-04:00');
+const T=new Date('2026-10-30T19:00:00-04:00');
 function tick(){let s=Math.max(0,(T-new Date())/1000|0);$('#d').textContent=s/86400|0;$('#h').textContent=s%86400/3600|0;$('#m').textContent=s%3600/60|0;$('#s').textContent=s%60}
 tick();setInterval(tick,1000);
-$('#ics').onclick=e=>{e.preventDefault();const t='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nUID:jantar-casa-nonna@convite\r\nDTSTAMP:20261029T120000Z\r\nDTSTART:20261030T233000Z\r\nDTEND:20261031T023000Z\r\nSUMMARY:Jantar na Casa Nonna\r\nLOCATION:Casa Nonna\\, R. Vinte e Quatro de Outubro 788\\, Popular\\, Cuiabá - MT\r\nEND:VEVENT\r\nEND:VCALENDAR',a=document.createElement('a');
+$('#ics').onclick=e=>{e.preventDefault();const t='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nUID:jantar-casa-nonna@convite\r\nDTSTAMP:20261029T120000Z\r\nDTSTART:20261030T230000Z\r\nDTEND:20261031T023000Z\r\nSUMMARY:Jantar na Casa Nonna (busca às 19h)\r\nLOCATION:Casa Nonna\\, R. Vinte e Quatro de Outubro 788\\, Popular\\, Cuiabá - MT\r\nEND:VEVENT\r\nEND:VCALENDAR',a=document.createElement('a');
 a.href=URL.createObjectURL(new Blob([t],{type:'text/calendar'}));a.download='jantar-casa-nonna.ics';a.click()};
 let done=0;$('#ok').onclick=()=>{if(done++)return;const b=$('#ok'),m=$('#msg');b.textContent='Confirmado!';b.classList.add('y');
 m.innerHTML='Que bom! Abrindo o WhatsApp para confirmarmos os detalhes.<br><a href="'+W+'">Confirmar no WhatsApp</a>';m.classList.add('show');
